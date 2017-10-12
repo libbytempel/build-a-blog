@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Make a new blog post</h1>
+    <form method='post' action='/add'>
+        <label>
+            Title of New Post
+        </label>
+            <input type="text" name='title' /><br>
+        <label>
+            Body of new post
+        </label>    
+            <textarea type="text" name="body"/></textarea><br>
+        {% if error %}
+        <strong>{{error}}</strong>
+        {% endif %}<br>
+        <input type="submit" value='Add Blog Post' />
+    </form>
+
+    <!-- <hr />
+
+    {% if blogs|length == 0 %}
+    <p>No posts yet</p>
+    {% else %}
+
+        <hr />
+
+    <h2>Past Blog Posts</h2>
+
+    <ul>
+        {% for each in blogs %}
+        <li>{{each.title}}
+            <ul><li>{{each.body}}</li></ul>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+
+    {% endif %} -->
+
+
+
+{% endblock %}
